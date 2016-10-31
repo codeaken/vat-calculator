@@ -591,7 +591,7 @@ class VatCalculator
 
                 return $result->valid;
             } catch (SoapFault $e) {
-                return false;
+                throw new VATCheckUnavailableException('The VAT check service is currently unavailable. Please try again later.');
             }
         }
         throw new VATCheckUnavailableException('The VAT check service is currently unavailable. Please try again later.');
